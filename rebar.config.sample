@@ -8,6 +8,18 @@
 %% Additional library directories to add to the code path
 {lib_dirs, []}.
 
+%% Command to run before compiling
+{compile_pre_script, "./script.sh"}.
+
+%% Command to run after compiling
+{compile_post_script, "./script.sh"}.
+
+%% Command to run before cleaning
+{clean_pre_script, "./script.sh"}.
+
+%% Command to run after cleaning
+{clean_post_script, "./script.sh"}.
+
 %% == Erlang Compiler ==
 
 %% Erlang files to compile before the rest. Rebar automatically compiles
@@ -26,6 +38,11 @@
 
 %% SNMP mibs to compile first?
 {mib_first_files, []}.
+
+%% == EDoc ==
+
+%% EDoc options
+{edoc_opts, []}.
 
 %% == Port Compiler ==
 
@@ -80,7 +97,7 @@
 %% {plt, PltFile}
 %% 'src': run Dialyzer on the source files as in 'dialyzer --src'
 %% {warnings, [WarnOpts]}: turn on/off Dialyzer warnings
-{warnings_opts, [{plt, PltFile}, {warnings, [WarnOpts]}, src]}.
+{dialyzer_opts, [{plt, PltFile}, {warnings, [WarnOpts]}, src]}.
 
 %% == Cleanup ==
 
